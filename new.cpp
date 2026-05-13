@@ -39,6 +39,19 @@ void printlist(node*& head){
 }
 cout<<"null"<<endl;
 }
+void search(node*& head,int key){
+    int pos = 1;
+    node* temp = head;
+    while(temp){
+        if(temp->data == key){
+            cout<<"found at "<<pos<<endl;
+            return;
+        }
+        temp = temp->next;
+        pos++;
+    }
+    cout<<"notfound";
+}
 int main(){
     node* head = nullptr;
 
@@ -46,7 +59,11 @@ int main(){
     printlist(head);
     insertatbeg(head, 35);
     printlist(head);
+insertatbeg(head, 24);
+insertatbeg(head, 32);
 
+    search(head, 35);
+    printlist(head);
 /*
 
 int arrA[5];int arrB[5];
