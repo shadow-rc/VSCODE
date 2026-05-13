@@ -12,18 +12,23 @@ void Linearsearch(int arr[],int key,int n){
 }
 
 void binarysearch(int arr[],int low,int high,int key,int n){
-  int mid=low + (high - low )/2;
-  if(arr[mid]==key){
-    cout<<"found at mid "<<mid<<endl;
-    return;
-  if(arr[mid]<key){
-    mid = low + 1; 
+  while(low <= high){
+    int mid = low + (high - low) / 2;
+    if(arr[mid] == key){
+      cout<<"found at mid "<<mid<<endl;
+      return;
+    }
+    else if(arr[mid] < key){
+      low = mid + 1;
+    }
+    else{
+      high = mid - 1;
+    }
   }
-  if (arr[mid]>key){
-    mid = high - 1;
-  }
-  }
+  cout<<"not found"<<endl;
 }
+
+
 
 
 int main (){
