@@ -32,22 +32,48 @@ void print(int arr[],int top){
     }
 }
 
+struct node{
+    int data;
+    node* left;
+    node* right;
+
+    node(int n){
+        data = n;
+        left = nullptr;
+        right = nullptr;
+    }
+
+};
+
+void inorder(node* rt){
+    if(rt){
+        inorder(rt->left);
+        cout<<rt->data;
+        inorder(rt->right);
+    }
+
+}
+
 
 int main(){
-    int arr[6]={1,2,3,4,5};
+    /*int arr[6]={1,2,3,4,5};
     push(arr,4,6,6);
     pop(arr,5);
     
    
     print (arr,4);
-     pop(arr,5);
-     print(arr,4);
+    pop(arr,5);
+    print(arr,4);
+*/
+
+    node* root = new node(5);
+    root->left = new node(2);
+    root->right = new node(7);
+    inorder(root);
+
+    cout<<endl;
+
 
 }
-
-
-
-
-
 
 
